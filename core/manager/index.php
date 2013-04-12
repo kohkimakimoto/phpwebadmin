@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="<?php echo wafunc::get_base_url()?>/contents/statics/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo wafunc::get_base_url()?>/contents/statics/css/style.css" rel="stylesheet">
+    <script src="<?php echo wafunc::get_base_url()?>/contents/statics/js/jquery-1.8.1.min.js"></script>
+    <script src="<?php echo wafunc::get_base_url()?>/contents/statics/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="<?php echo wafunc::get_base_url()?>/">PHPWebAdmin</a>
+          <ul class="nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/contents/home.php">home</a></li>
+                <li class="divider"></li>
+                <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/contents/phpinfo.php">phpinfo</a></li>
+                <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/contents/apc.php">apc</a></li>
+                <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/contents/adminer.php">adminer</a></li>
+                <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/contents/genghis.php">genghis</a></li>
+                <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/contents/memcache.php">memcached</a></li>
+
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav pull-right">
+            <li><a href="<?php echo wafunc::get_base_url()."/contents/logout.php"?>">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content-plain">
+      <style>html {overflow-y: hidden;}</style>
+      <IFRAME id="mainframe" src="<?php echo wafunc::get_base_url()?>/contents/home.php" name="contentIframe" class="icontent" width="100%" height="100%" frameborder="0" scrolling="auto" >
+      </IFRAME>
+      <script type="text/javascript">
+        $(function(){
+          var height = $('html').height();
+          $('.icontent').height(height - 40);
+
+
+          $('.framelink').live('click', function(){
+
+            var href = $(this).attr('href');
+
+            $("#mainframe").attr('src', href);
+            $('.dropdown.open').removeClass('open');
+
+            return false;
+
+          });
+
+
+        });
+      </script>
+    </div>
+  </body>
+</html>
