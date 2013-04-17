@@ -1,0 +1,11 @@
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  ## Uncomment the following line, if you are having trouble
+  # RewriteBase /psc
+
+  RewriteRule ^README.md$ [QSA,L]
+
+</IfModule>
