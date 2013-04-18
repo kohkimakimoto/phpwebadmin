@@ -1,6 +1,4 @@
 <?php
-require __DIR__."/core/bootstrap.php";
-
-require wafunc::get_core_dir()."/auth/protect.php";
-
-require wafunc::get_core_dir()."/manager/index.php";
+require __DIR__."/system/bootstrap.php";
+require wafunc::get_system_dir()."/auth/protect.php";
+require wafunc::get_modules_dir()."/manager/index.php";

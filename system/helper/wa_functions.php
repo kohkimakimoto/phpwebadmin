@@ -1,19 +1,24 @@
 <?php
 class WaFunctions {
 
-  public static function get_core_dir()
+  public static function get_system_dir()
   {
-    return WA_CORE_DIR;
+    return WA_SYSTEM_DIR;
   }
 
-  public static function get_contents_dir()
+  public static function get_modules_dir()
   {
-    return WA_CONTENTS_DIR;
+    return WA_MODULES_DIR;
   }
 
-  public static function get_plugins_dir()
+  public static function get_statics_dir()
   {
-    return WA_PLUGINS_DIR;
+    return WA_STATICS_DIR;
+  }
+
+  public static function get_config_dir()
+  {
+    return WA_CONFIG_DIR;
   }
 
   public static function get_base_url()

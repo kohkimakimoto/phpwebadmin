@@ -55,6 +55,6 @@ if (!isset($_SESSION[wasess::get_namespace()])) {
   $_SESSION[wasess::get_namespace()] = array();
 }
 
-$wa_passwords = include wafunc::get_core_dir().'/config/passwords.php';
+$wa_passwords = include wafunc::get_config_dir().'/passwords.php';
 
 
