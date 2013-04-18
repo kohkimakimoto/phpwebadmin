@@ -21,3 +21,11 @@ border-radius: 3px;
 -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
+.manager-home h1 {
+font-size: 30px;
+}
+body.manager-home  {
+ padding-top: 10px;
+}
+

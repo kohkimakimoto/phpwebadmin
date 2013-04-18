@@ -1,6 +1,11 @@
 <?php
 class WaFunctions {
 
+  public static function get_root_dir()
+  {
+    return WA_ROOT;
+  }
+
   public static function get_system_dir()
   {
     return WA_SYSTEM_DIR;

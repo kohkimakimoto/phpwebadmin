@@ -1,6 +1,10 @@
 <?php
 require __DIR__."/../../system/bootstrap.php";
 require wafunc::get_system_dir()."/auth/protect.php";
+require_once wafunc::get_system_dir().'/vendor/markdown/markdown.php';
+
+$readme_path = wafunc::get_root_dir()."/README.md";
+$text = file_get_contents($readme_path);
 
 ?>
 <!DOCTYPE html>
@@ -16,23 +20,9 @@ require wafunc::get_system_dir()."/auth/protect.php";
     <script src="<?php echo wafunc::get_base_url()?>/statics/js/jquery-1.8.1.min.js"></script>
     <script src="<?php echo wafunc::get_base_url()?>/statics/js/bootstrap.js"></script>
   </head>
-  <body>
+  <body class="manager-home">
     <div class="container-fluid">
-      <h2>PHPWebAdmin</h2>
-      <p>
-        PHPWebAdmin is a administration tools pot written in PHP.
-      </p>
-      <p>
-        This software integrates some wanderful PHP scripts.
-        The following is a list of integrated softwares.
-      </p>
-      <ul>
-        <li>phpinfo - phpinfo() built-in function showing PHP envrionments.</li>
-        <li>Adminer - Database Management Tool is in a single PHP file. </li>
-        <li>Genghis - MongoDB Management Tool.</li>
-        <li>apc.php - PHP Script shows APC Information.</li>
-        <li>memcache.php - PHP Script shows Memcached Information.</li>
-      </ul>
+      <?php echo Markdown($text)?>
     </div>
   </body>
 </html>
