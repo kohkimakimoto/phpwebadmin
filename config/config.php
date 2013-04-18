@@ -2,6 +2,8 @@
 return array(
   'base_url' => '/phpwebadmin',
 
+  'title'    => 'PHPWebAdmin',
+
   'memcache' => array(
     'username' => 'admin',
     'password' => 'admin',
@@ -9,4 +11,5 @@ return array(
       'localhost:11211',
     ),
   ),
+
 );

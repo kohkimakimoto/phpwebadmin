@@ -9,7 +9,7 @@ This software integrates some wanderful PHP scripts. The following is a list of 
 
   * [Genghis](http://genghisapp.com/) - MongoDB Management Tool.
 
-  * [memcache.php](http://livebookmark.net/journal/2008/05/21/memcachephp-stats-like-apcphp/) - PHP Script like apc.php shows Memcached Information.
+  * [memcache.php](http://livebookmark.net/journal/2008/05/21/memcachephp-stats-like-apcphp/) - PHP Script shows Memcached Information.
 
 # Usage
 

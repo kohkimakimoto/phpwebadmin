@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Dashboard</title>
+    <title><?php echo wafunc::get_config('title')?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -15,8 +15,14 @@
     <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="<?php echo wafunc::get_base_url()?>/">PHPWebAdmin</a>
+          <a class="brand" href="<?php echo wafunc::get_base_url()?>/"><?php echo wafunc::get_config('title')?></a>
           <ul class="nav">
+          <li class="dropdown">
+            <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/adminer/index.php">adminer</a></li>
+            <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/genghis/index.php">genghis</a></li>
+            <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/memcache/index.php">memcached</a></li>
+
+<!--
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -27,6 +33,7 @@
                 <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/memcache/index.php">memcached</a></li>
               </ul>
             </li>
+-->
           </ul>
           <ul class="nav pull-right">
             <li><a href="<?php echo wafunc::get_base_url()."/modules/manager/logout.php"?>">Logout</a></li>

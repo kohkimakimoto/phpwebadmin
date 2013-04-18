@@ -15,7 +15,7 @@ if (wafunc::is_method('post')) {
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>PHPWebAdmin</title>
+    <title><?php echo wafunc::get_config('title')?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -64,7 +64,7 @@ if (wafunc::is_method('post')) {
   <body>
     <div class="content-plain">
       <form class="form-signin" action="<?php echo wafunc::get_current_url()?>" method="POST">
-        <h2 class="form-signin-heading">PHPWebAdmin Sign In</h2>
+        <h2 class="form-signin-heading">Please Sign In</h2>
         <input class="input-block-level" type="text" name="username" placeholder="username" value="" />
         <input class="input-block-level" type="password" name="password" placeholder="password" value="" />
 
