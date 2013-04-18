@@ -38,7 +38,7 @@ defaults('USE_AUTHENTICATION',1);			// Use (internal) authentication - best choi
 											// If set to 1:
 											//  You need to change ADMIN_PASSWORD to make
 											//  this work!
-defaults('ADMIN_USERNAME','apc'); 			// Admin Username
+// defaults('ADMIN_USERNAME','apc'); 			// Admin Username
 defaults('ADMIN_PASSWORD','password');  	// Admin Password - CHANGE THIS TO ENABLE!!!
 
 // (beckerr) I'm using a clear text password here, because I've no good idea how to let

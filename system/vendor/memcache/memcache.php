@@ -25,7 +25,6 @@ $VERSION='$Id: memcache.php,v 1.1.2.3 2008/08/28 18:07:54 mikl Exp $';
 // define('GRAPH_SIZE',200);
 // define('MAX_ITEM_DUMP',50);
 
-$MEMCACHE_SERVERS[] = 'localhost:11211'; // add more as an array
 //$MEMCACHE_SERVERS[] = 'mymemcache-server2:11211'; // add more as an array
 
 
@@ -33,6 +32,7 @@ $MEMCACHE_SERVERS[] = 'localhost:11211'; // add more as an array
 
 ///////////////// Password protect ////////////////////////////////////////////////////////////////
 
+/*
 if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
            $_SERVER['PHP_AUTH_USER'] != ADMIN_USERNAME ||$_SERVER['PHP_AUTH_PW'] != ADMIN_PASSWORD) {
 			Header("WWW-Authenticate: Basic realm=\"Memcache Login\"");
@@ -46,7 +46,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW']) ||
 EOB;
 			exit;
 }
-
+*/
 
 ///////////MEMCACHE FUNCTIONS /////////////////////////////////////////////////////////////////////
 

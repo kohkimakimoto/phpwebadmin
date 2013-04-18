@@ -22,12 +22,9 @@
               <ul class="dropdown-menu">
                 <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/manager/home.php">home</a></li>
                 <li class="divider"></li>
-                <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/phpinfo/index.php">phpinfo</a></li>
-                <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/apc/index.php">apc</a></li>
                 <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/adminer/index.php">adminer</a></li>
                 <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/genghis/index.php">genghis</a></li>
                 <li><a class="framelink" href="<?php echo wafunc::get_base_url()?>/modules/memcache/index.php">memcached</a></li>
-
               </ul>
             </li>
           </ul>
