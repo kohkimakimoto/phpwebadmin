@@ -12,4 +12,9 @@ return array(
     ),
   ),
 
+  'phpinfo' => array(
+    'node_urls' => array(
+    )
+  ),
+
 );

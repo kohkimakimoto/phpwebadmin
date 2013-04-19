@@ -4,8 +4,6 @@ DirectoryIndex index.php
   RewriteEngine On
 
   ## Uncomment the following line, if you are having trouble
-  # RewriteBase /psc
-
-  RewriteRule ^README.md$ [QSA,L]
+  # RewriteBase /
 
 </IfModule>
