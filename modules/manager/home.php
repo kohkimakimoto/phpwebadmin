@@ -6,6 +6,8 @@ require_once wafunc::get_system_dir().'/vendor/markdown/markdown.php';
 $readme_path = wafunc::get_root_dir()."/README.md";
 $text = file_get_contents($readme_path);
 
+$servers = Config::get('servers');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,20 @@ $text = file_get_contents($readme_path);
   </head>
   <body class="manager-home">
     <div class="container-fluid">
-      <?php echo Markdown($text)?>
+      <div class="row-fluid">
+        <div class="span3">
+          <ul class="nav nav-tabs nav-stacked">
+
+            <?php foreach ($servers as $name => $server):?>
+              <li><a href="#"><?php echo $name;?></a></li>
+            <?php endforeach;?>
+          </ul>
+        </div>
+        <div class="span9">
+          <?php echo Markdown($text)?>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
