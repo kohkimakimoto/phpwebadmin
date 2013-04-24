@@ -1,12 +1,11 @@
 <?php
 require __DIR__."/../../system/bootstrap.php";
-require wafunc::get_system_dir()."/auth/protect.php";
-require_once wafunc::get_system_dir().'/vendor/markdown/markdown.php';
+require AppConfig::get('system_dir')."/include/protect.php";
+require_once AppConfig::get('system_dir').'/vendor/markdown/markdown.php';
 
-$readme_path = wafunc::get_root_dir()."/README.md";
+$readme_path = AppConfig::get('root_dir')."/README.md";
 $text = file_get_contents($readme_path);
-
-$servers = Config::get('servers');
+$servers = AppConfig::get('servers');
 
 ?>
 <!DOCTYPE html>
@@ -17,10 +16,10 @@ $servers = Config::get('servers');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="<?php echo wafunc::get_base_url()?>/statics/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo wafunc::get_base_url()?>/statics/css/style.css" rel="stylesheet">
-    <script src="<?php echo wafunc::get_base_url()?>/statics/js/jquery-1.8.1.min.js"></script>
-    <script src="<?php echo wafunc::get_base_url()?>/statics/js/bootstrap.js"></script>
+    <link href="<?php echo AppConfig::get('base_url')?>/statics/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo AppConfig::get('base_url')?>/statics/css/style.css" rel="stylesheet">
+    <script src="<?php echo AppConfig::get('base_url')?>/statics/js/jquery-1.8.1.min.js"></script>
+    <script src="<?php echo AppConfig::get('base_url')?>/statics/js/bootstrap.js"></script>
   </head>
   <body class="manager-home">
     <div class="container-fluid">

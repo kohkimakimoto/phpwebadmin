@@ -14,7 +14,7 @@ This software integrates some wanderful PHP scripts. The following is a list of 
 # Usage
 
   1. Put all files in web accessible directory.
-  1. Access using web browser to http://hostname/phpwebadmin/
+  1. Access using web browser to http://yourserver/
 
 # Notice
 
