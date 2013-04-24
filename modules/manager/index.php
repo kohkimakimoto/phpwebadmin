@@ -69,8 +69,7 @@ $hosts = AppHost::getAll();
       <script type="text/javascript">
         $(function(){
           var height = $('html').height();
-          $('.icontent').height(height - 40);
-
+          $('.icontent').height(height - 30);
 
           $('.framelink').live('click', function(){
 
