@@ -1,6 +1,6 @@
 <?php
 return array(
-  'base_url' => '/phpwebadmin',
+  'base_url' => '',
 
   'title'    => 'PHPWebAdmin',
 

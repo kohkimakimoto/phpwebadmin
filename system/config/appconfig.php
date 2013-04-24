@@ -1,11 +1,11 @@
 <?php
 /**
- * Config
+ * AppConfig
  *
  * @author kohkimakimoto <kohki.makimoto@gmail.com>
  * @version $Revision$
  */
-class Config
+class AppConfig
 {
   /**
    * Array of configuration values.

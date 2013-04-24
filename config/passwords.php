@@ -1,8 +1,10 @@
 <?php
 return array(
-  "admin"   => sha1("admin"),
+  'passwords' => array(
+    "admin"   => sha1("admin"),
+    /*
+    "user001" => sha1("user001"),
+    */
+  )
 
-  /*
-  "user001" => sha1("user001"),
-  */
 );

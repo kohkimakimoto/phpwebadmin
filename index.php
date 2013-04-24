@@ -1,4 +1,4 @@
 <?php
 require __DIR__."/system/bootstrap.php";
-require wafunc::get_system_dir()."/auth/protect.php";
-require wafunc::get_modules_dir()."/manager/index.php";
+require AppConfig::get('system_dir')."/include/protect.php";
+require AppConfig::get('modules_dir')."/manager/index.php";

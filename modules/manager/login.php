@@ -2,12 +2,12 @@
 // Bootstrap
 require __DIR__."/../../system/bootstrap.php";
 
-if (wafunc::is_method('post')) {
+if (AppFunctions::isMethod('post')) {
   $username = @$_REQUEST['username'];
   $password = @$_REQUEST['password'];
-  if (wasess::check_password($username, $password)) {
-    wasess::set_authenticated(true);
-    wafunc::redirect(wafunc::get_base_url()."/");
+  if (AppSession::checkPassword($username, $password)) {
+    AppSession::setAuthenticated(true);
+    AppFunctions::redirect(AppConfig::get('base_url')."/");
   }
 }
 ?>
@@ -15,14 +15,14 @@ if (wafunc::is_method('post')) {
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><?php echo wafunc::get_config('title')?></title>
+    <title><?php echo AppConfig::get('title')?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="<?php echo wafunc::get_base_url()?>/statics/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo wafunc::get_base_url()?>/statics/css/style.css" rel="stylesheet">
-    <script src="<?php echo wafunc::get_base_url()?>/statics/js/jquery-1.8.1.min.js"></script>
-    <script src="<?php echo wafunc::get_base_url()?>/statics/js/bootstrap.js"></script>
+    <link href="<?php echo AppConfig::get('base_url')?>/statics/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo AppConfig::get('base_url')?>/statics/css/style.css" rel="stylesheet">
+    <script src="<?php echo AppConfig::get('base_url')?>/statics/js/jquery-1.8.1.min.js"></script>
+    <script src="<?php echo AppConfig::get('base_url')?>/statics/js/bootstrap.js"></script>
     <style type="text/css">
       body {
         padding-top: 40px;
@@ -63,7 +63,7 @@ if (wafunc::is_method('post')) {
   </head>
   <body>
     <div class="content-plain">
-      <form class="form-signin" action="<?php echo wafunc::get_current_url()?>" method="POST">
+      <form class="form-signin" action="<?php echo AppFunctions::getCurrentUrl()?>" method="POST">
         <h2 class="form-signin-heading">Please Sign In</h2>
         <input class="input-block-level" type="text" name="username" placeholder="username" value="" />
         <input class="input-block-level" type="password" name="password" placeholder="password" value="" />
