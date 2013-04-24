@@ -5,7 +5,7 @@ require_once AppConfig::get('system_dir').'/vendor/markdown/markdown.php';
 
 $readme_path = AppConfig::get('root_dir')."/README.md";
 $text = file_get_contents($readme_path);
-$servers = AppConfig::get('servers');
+
 
 ?>
 <!DOCTYPE html>
@@ -24,19 +24,10 @@ $servers = AppConfig::get('servers');
   <body class="manager-home">
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
-          <ul class="nav nav-tabs nav-stacked">
-
-            <?php foreach ($servers as $name => $server):?>
-              <li><a href="#"><?php echo $name;?></a></li>
-            <?php endforeach;?>
-          </ul>
-        </div>
-        <div class="span9">
+        <div class="span12">
           <?php echo Markdown($text)?>
         </div>
       </div>
-
     </div>
   </body>
 </html>

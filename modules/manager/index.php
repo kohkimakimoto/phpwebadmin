@@ -1,3 +1,8 @@
+<?php
+
+$hosts = AppHost::getAll();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,14 +20,30 @@
     <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="brand" href="<?php echo AppConfig::get('base_url')?>"><?php echo AppConfig::get('title')?></a>
           <ul class="nav">
-          <li class="dropdown">
-            <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/adminer/index.php">adminer</a></li>
+            <li class=""><a href="<?php echo AppConfig::get('base_url')?>/">Home</a></li>
+            <li class="dropdown">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Managed hosts<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <?php foreach ($hosts as $host):?>
+                  <li class="dropdown-submenu">
+                    <a tabindex="-1" href="#"><?php echo $host->getName()?></a>
+                    <ul class="dropdown-menu">
+                      <?php foreach ($host->getModules() as $module):?>
+                      <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/<?php echo $module?>/index.php"><?php echo $module?></a></li>
+                      <?php endforeach;?>
+                    </ul>
+                  </li>
+
+                  <?php endforeach;?>
+                </ul>
+              </li>
+<!--
+          <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/adminer/index.php">adminer</a></li>
             <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/genghis/index.php">genghis</a></li>
             <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/memcache/index.php">memcached</a></li>
 
-<!--
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
               <ul class="dropdown-menu">

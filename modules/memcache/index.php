@@ -4,8 +4,6 @@ require AppConfig::get('system_dir')."/include/protect.php";
 
 
 $memcache_config = AppConfig::get('memcache');
-define('ADMIN_USERNAME', $memcache_config['username']);
-define('ADMIN_PASSWORD', $memcache_config['password']);
 
 define('DATE_FORMAT','Y/m/d H:i:s');
 define('GRAPH_SIZE',200);

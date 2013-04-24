@@ -19,8 +19,9 @@ AppConfig::set('config_dir', AppFunctions::getConfigDir());
 
 AppConfig::loadConfig(AppConfig::get('root_dir')."/config/config.php");
 AppConfig::loadConfig(AppConfig::get('root_dir')."/config/passwords.php");
-AppConfig::loadConfig(AppConfig::get('root_dir')."/config/servers.php");
+AppConfig::loadConfig(AppConfig::get('root_dir')."/config/hosts.php");
 
 // Load Libraries
 require_once WA_SYSTEM_DIR.'/helper/appsession.php';
+require_once WA_SYSTEM_DIR.'/host/apphost.php';
 

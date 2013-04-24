@@ -1,12 +1,12 @@
 <?php
 return array(
+  'is_master'=> 1,
+
   'base_url' => '',
 
   'title'    => 'PHPWebAdmin',
 
   'memcache' => array(
-    'username' => 'admin',
-    'password' => 'admin',
     'servers'  => array(
       'localhost:11211',
     ),
@@ -16,5 +16,4 @@ return array(
     'node_urls' => array(
     )
   ),
-
 );
