@@ -9,10 +9,10 @@ return array(
     'localhost'     => array(
       'description' => 'This is a localhost.',
       'features'     => array(
-        'mysql'    => array(
+        'mysql::yourdatabase'    => array(
           'module' => 'adminer'
         ),
-        'memcache' => array(
+        'memcached::localhost' => array(
           'module' => 'memcache'
         ),
       ),
