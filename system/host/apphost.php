@@ -3,6 +3,7 @@ class AppHost
 {
   protected $name;
 
+  protected $options;
 
   public static function getAll()
   {
@@ -17,8 +18,11 @@ class AppHost
 
   public static function getInstanceByName($name)
   {
+    $hostoptions = AppConfig::get("hosts/$name");
+
     $host = new AppHost();
     $host->setName($name);
+    $host->setOptions($hostoptions);
 
     return $host;
   }
@@ -45,6 +49,21 @@ class AppHost
     }
 
     return $modules;
+  }
+
+  public function setOptions($options)
+  {
+    $this->options = $options;
+  }
+
+  public function getOptions()
+  {
+    return $this->options;
+  }
+
+  public function getOption($key)
+  {
+    return @$this->options[$key];
   }
 
 }

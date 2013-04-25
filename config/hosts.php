@@ -7,7 +7,7 @@ return array(
      */
 
     'localhost'     => array(
-      'description' => 'foo',
+      'description' => 'This is a localhost.',
       'modules'     => array(
         'adminer'  => array(),
         'genghis'  => array(),

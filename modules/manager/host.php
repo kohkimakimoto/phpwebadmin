@@ -34,6 +34,9 @@ $currentHost = AppHost::getInstanceByName($_GET['hostname']);
           <div class="span9">
             <h1><?php echo $currentHost->getName()?></h1>
             <div class="section">
+              <?php echo $currentHost->getOption('description')?>
+            </div>
+            <div class="section">
               <h2>Modules</h2>
               <table class="table table-hover">
               <?php foreach ($currentHost->getModules() as $module):?>
