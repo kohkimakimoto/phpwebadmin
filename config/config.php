@@ -4,5 +4,11 @@ return array(
 
   'base_url' => '',
 
-  'title'    => 'PHPWebAdmin',
+  'title'    => 'phpwebadmin',
+
+  'memcache' => array(
+    'servers'  => array(
+        'localhost:11211',
+    ),
+  ),
 );

@@ -1,8 +1,3 @@
-<?php
-
-$hosts = AppHost::getAll();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,6 +17,9 @@ $hosts = AppHost::getAll();
         <div class="container-fluid">
           <ul class="nav">
             <li class=""><a href="<?php echo AppConfig::get('base_url')?>/">Home</a></li>
+            <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/adminer/index.php">adminer</a></li>
+            <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/genghis/index.php">genghis</a></li>
+            <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/memcache/index.php">memcached</a></li>
           </ul>
           <ul class="nav pull-right">
             <li>

@@ -5,9 +5,6 @@ require_once AppConfig::get('system_dir').'/vendor/markdown/markdown.php';
 
 $readme_path = AppConfig::get('root_dir')."/README.md";
 $text = file_get_contents($readme_path);
-
-$hosts = AppHost::getAll();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,16 +23,11 @@ $hosts = AppHost::getAll();
     <div class="content-front">
       <div class="container-fluid">
         <div class="row-fluid">
-          <div class="span3">
-            <ul class="nav nav-list">
-              <li class="nav-header">Managed hosts</li>
-              <?php foreach ($hosts as $host):?>
-                <li><a href="<?php echo AppConfig::get('base_url')?>/modules/manager/host.php?hostname=<?php echo $host->getName()?>"><?php echo $host->getName()?></a></li>
-              <?php endforeach;?>
-            </ul>
-          </div>
-          <div class="span9">
-            <?php echo Markdown($text)?>
+          <div class="span12">
+<div style="text-align: center;">
+<h1>PHPWebAdmin</h1>
+<p>Integrate PHP admin scripts.</p>
+</div>
           </div>
         </div>
       </div>
@@ -43,9 +35,7 @@ $hosts = AppHost::getAll();
     <div class="content-background">
       <div class="container-fluid">
         <div class="row-fluid">
-          <div class="span3">
-          </div>
-          <div class="span9">
+          <div class="span12">
           </div>
         </div>
       </div>
