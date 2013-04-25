@@ -6,9 +6,13 @@ return array(
 
   'title'    => 'phpwebadmin',
 
+  /*
+  'adminer' => array(
+    'servers'  => array('root@localhost' => 'mysql.localhost')
+  ),
+  */
+
   'memcache' => array(
-    'servers'  => array(
-        'localhost:11211',
-    ),
+    'servers'  => array('localhost:11211'),
   ),
 );
