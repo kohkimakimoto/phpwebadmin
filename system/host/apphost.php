@@ -35,7 +35,16 @@ class AppHost
 
   public function getModules()
   {
-    return AppConfig::get('hosts/'.$this->name.'/modules');
+    $modules = array();
+    $ms = AppConfig::get('hosts/'.$this->name.'/modules');
+    foreach ($ms as $modulename => $options) {
+      $m = new AppModule();
+      $m->setName($modulename);
+      $m->setOptions($options);
+      $modules[] = $m;
+    }
+
+    return $modules;
   }
 
 }

@@ -3,11 +3,8 @@ require __DIR__."/../../system/bootstrap.php";
 require AppConfig::get('system_dir')."/include/protect.php";
 require_once AppConfig::get('system_dir').'/vendor/markdown/markdown.php';
 
-$readme_path = AppConfig::get('root_dir')."/README.md";
-$text = file_get_contents($readme_path);
-
 $hosts = AppHost::getAll();
-
+$currentHost = AppHost::getInstanceByName($_GET['hostname']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +32,19 @@ $hosts = AppHost::getAll();
             </ul>
           </div>
           <div class="span9">
-            <?php echo Markdown($text)?>
+            <h1><?php echo $currentHost->getName()?></h1>
+            <div class="section">
+              <h2>Modules</h2>
+              <table class="table table-hover">
+              <?php foreach ($currentHost->getModules() as $module):?>
+                <tr>
+                  <td>
+                    <a href="<?php echo AppConfig::get('base_url')?>/modules/<?php echo $module->getName()?>/index.php"><?php echo $module->getName()?></a></li>
+                  </td>
+                </tr>
+              <?php endforeach;?>
+              </table>
+            </div>
           </div>
         </div>
       </div>

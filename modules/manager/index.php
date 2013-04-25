@@ -22,42 +22,14 @@ $hosts = AppHost::getAll();
         <div class="container-fluid">
           <ul class="nav">
             <li class=""><a href="<?php echo AppConfig::get('base_url')?>/">Home</a></li>
-            <li class="dropdown">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Managed hosts<b class="caret"></b></a>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                  <?php foreach ($hosts as $host):?>
-                  <li class="dropdown-submenu">
-                    <a tabindex="-1" href="#"><?php echo $host->getName()?></a>
-                    <ul class="dropdown-menu">
-                      <?php foreach ($host->getModules() as $module):?>
-                      <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/<?php echo $module?>/index.php"><?php echo $module?></a></li>
-                      <?php endforeach;?>
-                    </ul>
-                  </li>
-
-                  <?php endforeach;?>
-                </ul>
-              </li>
-<!--
-          <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/adminer/index.php">adminer</a></li>
-            <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/genghis/index.php">genghis</a></li>
-            <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/memcache/index.php">memcached</a></li>
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/manager/home.php">home</a></li>
-                <li class="divider"></li>
-                <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/adminer/index.php">adminer</a></li>
-                <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/genghis/index.php">genghis</a></li>
-                <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/memcache/index.php">memcached</a></li>
-              </ul>
-            </li>
--->
           </ul>
           <ul class="nav pull-right">
-            <li><a href="<?php echo AppConfig::get('base_url')."/modules/manager/logout.php"?>">Logout</a></li>
+            <li>
+              <a href="<?php echo AppConfig::get('base_url')."/modules/manager/logout.php"?>">
+              <i class="icon-off icon-white"></i>
+              Logout
+              </a>
+            </li>
           </ul>
         </div>
       </div>

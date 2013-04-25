@@ -22,12 +22,10 @@ border-radius: 3px;
 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.manager-home h1 {
-font-size: 30px;
-}
 body.manager-home  {
  padding-top: 20px;
 }
+
 
 .navbar-inner {
 min-height: 30px;
@@ -52,4 +50,29 @@ box-shadow: 0 1px 4px rgba(0,0,0,0.065);
 
 .navbar .nav>li>a {
 padding: 5px 15px 5px;
+}
+
+.content-front .container-fluid .row-fluid .span9{
+  padding-left: 10px;
+}
+
+.content-background {
+  position: fixed;
+  top:0;
+  left:0;
+  height: 100%;
+  width:100%;
+  z-index: -9999;
+}
+
+.content-background .container-fluid {
+  height: 100%;
+}
+.content-background .container-fluid .row-fluid {
+  height: 100%;
+}
+.content-background .container-fluid .row-fluid .span9{
+  height: 100%;
+  border-left: 1px solid #e1e1e1;
+  margin-left: 10px;
 }
