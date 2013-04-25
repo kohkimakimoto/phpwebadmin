@@ -5,15 +5,4 @@ return array(
   'base_url' => '',
 
   'title'    => 'PHPWebAdmin',
-
-  'memcache' => array(
-    'servers'  => array(
-      'localhost:11211',
-    ),
-  ),
-
-  'phpinfo' => array(
-    'node_urls' => array(
-    )
-  ),
 );

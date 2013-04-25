@@ -45,6 +45,7 @@ class AppHost
       $f = new AppFeature();
       $f->setName($name);
       $f->setOptions($options);
+      $f->setHost($this);
       $features[] = $f;
     }
 

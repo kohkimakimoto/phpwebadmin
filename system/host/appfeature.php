@@ -2,7 +2,10 @@
 class AppFeature
 {
   protected $name;
+
   protected $options;
+
+  protected $host;
 
   public function setName($name)
   {
@@ -30,5 +33,20 @@ class AppFeature
     $m->setName($this->options['module']);
 
     return $m;
+  }
+
+  public function setHost($host)
+  {
+    $this->host = $host;
+  }
+
+  public function getHost()
+  {
+    return $this->host;
+  }
+
+  public function getKey()
+  {
+    return "hosts/".$this->getHost()->getName()."/features/".$this->getName();
   }
 }

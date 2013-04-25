@@ -10,7 +10,7 @@ $currentHost = AppHost::getInstanceByName($_GET['hostname']);
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Dashboard</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -50,7 +50,7 @@ $currentHost = AppHost::getInstanceByName($_GET['hostname']);
               <?php foreach ($currentHost->getFeatures() as $feature):?>
                 <tr>
                   <td style="width: 1%;">
-                    <a href="<?php echo AppConfig::get('base_url')?>/modules/<?php echo $feature->getModule()->getName()?>/index.php"><?php echo $feature->getName()?></a>
+                    <a href="<?php echo AppConfig::get('base_url')?>/modules/<?php echo $feature->getModule()->getName()?>/index.php?feature=<?php echo $feature->getKey()?>"><?php echo $feature->getName()?></a>
                   </td>
                   <td>
                     <?php echo $feature->getModule()->getName()?>

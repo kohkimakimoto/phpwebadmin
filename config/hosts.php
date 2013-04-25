@@ -13,24 +13,18 @@ return array(
           'module' => 'adminer'
         ),
         'memcached::localhost' => array(
-          'module' => 'memcache'
+          'module' => 'memcache',
+          'servers' => array(
+            'localhost:11211',
+          ),
         ),
       ),
     ),
 
     'web-sample1' => array(
         'description' => 'web-sample1',
-        'modules'     => array(),
-    ),
-
-    'web-sample2' => array(
-        'description' => 'web-sample1',
-        'modules'     => array(),
-    ),
-
-    'web-sample3' => array(
-        'description' => 'web-sample1',
-        'modules'     => array(),
+        'features'     => array(
+        ),
     ),
 
   )
