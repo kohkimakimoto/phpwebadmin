@@ -37,18 +37,18 @@ class AppHost
     return $this->name;
   }
 
-  public function getModules()
+  public function getFeatures()
   {
-    $modules = array();
-    $ms = AppConfig::get('hosts/'.$this->name.'/modules');
-    foreach ($ms as $modulename => $options) {
-      $m = new AppModule();
-      $m->setName($modulename);
-      $m->setOptions($options);
-      $modules[] = $m;
+    $features = array();
+    $fs = AppConfig::get('hosts/'.$this->name.'/features');
+    foreach ($fs as $name => $options) {
+      $f = new AppFeature();
+      $f->setName($name);
+      $f->setOptions($options);
+      $features[] = $f;
     }
 
-    return $modules;
+    return $features;
   }
 
   public function setOptions($options)

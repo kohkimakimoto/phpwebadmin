@@ -37,15 +37,30 @@ $currentHost = AppHost::getInstanceByName($_GET['hostname']);
               <?php echo $currentHost->getOption('description')?>
             </div>
             <div class="section">
-              <h2>Modules</h2>
+              <h2>Features</h2>
               <table class="table table-hover">
-              <?php foreach ($currentHost->getModules() as $module):?>
+              <thead>
                 <tr>
+                  <th>Name</th>
+                  <th>Module</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php foreach ($currentHost->getFeatures() as $feature):?>
+                <tr>
+                  <td style="width: 1%;">
+                    <a href="<?php echo AppConfig::get('base_url')?>/modules/<?php echo $feature->getModule()->getName()?>/index.php"><?php echo $feature->getName()?></a>
+                  </td>
                   <td>
-                    <a href="<?php echo AppConfig::get('base_url')?>/modules/<?php echo $module->getName()?>/index.php"><?php echo $module->getName()?></a></li>
+                    <?php echo $feature->getModule()->getName()?>
+                  </td>
+                  <td>
+                    <?php //echo $feature->getOption('description')?>
                   </td>
                 </tr>
               <?php endforeach;?>
+              </tbody>
               </table>
             </div>
           </div>

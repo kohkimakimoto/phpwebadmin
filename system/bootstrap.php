@@ -24,6 +24,7 @@ AppConfig::loadConfig(AppConfig::get('root_dir')."/config/hosts.php");
 
 // Load Libraries
 require_once WA_SYSTEM_DIR.'/helper/appsession.php';
+require_once WA_SYSTEM_DIR.'/host/appfeature.php';
 require_once WA_SYSTEM_DIR.'/host/appmodule.php';
 require_once WA_SYSTEM_DIR.'/host/apphost.php';
 

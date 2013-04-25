@@ -8,10 +8,14 @@ return array(
 
     'localhost'     => array(
       'description' => 'This is a localhost.',
-      'modules'     => array(
-        'adminer'  => array(),
-        'genghis'  => array(),
-        'memcache' => array(),),
+      'features'     => array(
+        'mysql'    => array(
+          'module' => 'adminer'
+        ),
+        'memcache' => array(
+          'module' => 'memcache'
+        ),
+      ),
     ),
 
     'web-sample1' => array(
