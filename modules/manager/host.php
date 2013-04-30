@@ -19,61 +19,57 @@ $currentHost = AppHost::getInstanceByName($_GET['hostname']);
     <script src="<?php echo AppConfig::get('base_url')?>/statics/js/jquery-1.8.1.min.js"></script>
     <script src="<?php echo AppConfig::get('base_url')?>/statics/js/bootstrap.js"></script>
   </head>
-  <body class="manager-home">
+  <body class="default">
     <div class="content-front">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span3">
-            <ul class="nav nav-list">
-              <li class="nav-header">Managed hosts</li>
-              <?php foreach ($hosts as $host):?>
-                <li><a href="<?php echo AppConfig::get('base_url')?>/modules/manager/host.php?hostname=<?php echo $host->getName()?>"><?php echo $host->getName()?></a></li>
-              <?php endforeach;?>
-            </ul>
+      <div class="container-front">
+        <div class="side">
+          <ul class="nav nav-list">
+            <li class="nav-header">Managed hosts</li>
+            <?php foreach ($hosts as $host):?>
+              <li><a href="<?php echo AppConfig::get('base_url')?>/modules/manager/host.php?hostname=<?php echo $host->getName()?>"><?php echo $host->getName()?></a></li>
+            <?php endforeach;?>
+          </ul>
+        </div>
+        <div class="main">
+          <h1><?php echo $currentHost->getName()?></h1>
+          <div class="section">
+            <?php echo $currentHost->getOption('description')?>
           </div>
-          <div class="span9">
-            <h1><?php echo $currentHost->getName()?></h1>
-            <div class="section">
-              <?php echo $currentHost->getOption('description')?>
-            </div>
-            <div class="section">
-              <h2>Features</h2>
-              <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Module</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-              <?php foreach ($currentHost->getFeatures() as $feature):?>
-                <tr>
-                  <td style="width: 1%;">
-                    <a href="<?php echo AppConfig::get('base_url')?>/modules/<?php echo $feature->getModule()->getName()?>/index.php?feature=<?php echo $feature->getKey()?>"><?php echo $feature->getName()?></a>
-                  </td>
-                  <td>
-                    <?php echo $feature->getModule()->getName()?>
-                  </td>
-                  <td>
-                    <?php //echo $feature->getOption('description')?>
-                  </td>
-                </tr>
-              <?php endforeach;?>
-              </tbody>
-              </table>
-            </div>
+          <div class="section">
+            <h2>Features</h2>
+            <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Module</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($currentHost->getFeatures() as $feature):?>
+              <tr>
+                <td style="width: 1%;">
+                  <a href="<?php echo AppConfig::get('base_url')?>/modules/<?php echo $feature->getModule()->getName()?>/index.php?feature=<?php echo $feature->getKey()?>"><?php echo $feature->getName()?></a>
+                </td>
+                <td>
+                  <?php echo $feature->getModule()->getName()?>
+                </td>
+                <td>
+                  <?php //echo $feature->getOption('description')?>
+                </td>
+              </tr>
+            <?php endforeach;?>
+            </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
     <div class="content-background">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span3">
-          </div>
-          <div class="span9">
-          </div>
+      <div class="container-front">
+        <div class="side">
+        </div>
+        <div class="main">
         </div>
       </div>
     </div>

@@ -22,8 +22,8 @@ border-radius: 3px;
 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-body.manager-home  {
- padding-top: 20px;
+body.default  {
+ padding-top: 10px;
 }
 
 
@@ -52,11 +52,20 @@ box-shadow: 0 1px 4px rgba(0,0,0,0.065);
 padding: 5px 15px 5px;
 }
 
-.content-front .container-fluid .row-fluid .span9{
-  padding-left: 10px;
+.container-front {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.content-background {
+.container-front .side {
+  width: 140px;
+  float: left;
+}
+.container-front .main {
+  margin-left: 160px;
+}
+
+.content-background .container-front {
   position: fixed;
   top:0;
   left:0;
@@ -64,15 +73,10 @@ padding: 5px 15px 5px;
   width:100%;
   z-index: -9999;
 }
+.content-background .container-front .side {
+  height: 100%;
+  border-right: 1px solid #e1e1e1;
 
-.content-background .container-fluid {
-  height: 100%;
-}
-.content-background .container-fluid .row-fluid {
-  height: 100%;
-}
-.content-background .container-fluid .row-fluid .span9{
-  height: 100%;
-  border-left: 1px solid #e1e1e1;
-  margin-left: 10px;
+  width: 140px;
+  float: left;
 }

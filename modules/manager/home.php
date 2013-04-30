@@ -5,6 +5,9 @@ require_once AppConfig::get('system_dir').'/vendor/markdown/markdown.php';
 
 $readme_path = AppConfig::get('root_dir')."/README.md";
 $text = file_get_contents($readme_path);
+
+$hosts = AppHost::getAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,24 +22,27 @@ $text = file_get_contents($readme_path);
     <script src="<?php echo AppConfig::get('base_url')?>/statics/js/jquery-1.8.1.min.js"></script>
     <script src="<?php echo AppConfig::get('base_url')?>/statics/js/bootstrap.js"></script>
   </head>
-  <body class="manager-home">
+  <body class="default">
     <div class="content-front">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span12">
-<div style="text-align: center;">
-<h1>PHPWebAdmin</h1>
-<p>Integrate PHP admin scripts.</p>
-</div>
-          </div>
+      <div class="container-front">
+        <div class="side">
+          <ul class="nav nav-list">
+            <li class="nav-header">Managed hosts</li>
+            <?php foreach ($hosts as $host):?>
+              <li><a href="<?php echo AppConfig::get('base_url')?>/modules/manager/host.php?hostname=<?php echo $host->getName()?>"><?php echo $host->getName()?></a></li>
+            <?php endforeach;?>
+          </ul>
+        </div>
+        <div class="main">
+          <?php echo Markdown($text)?>
         </div>
       </div>
     </div>
     <div class="content-background">
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span12">
-          </div>
+      <div class="container-front">
+        <div class="side">
+        </div>
+        <div class="main">
         </div>
       </div>
     </div>
