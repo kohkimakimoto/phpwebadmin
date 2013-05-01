@@ -7,17 +7,25 @@ return array(
     'localhost'     => array(
       'description' => 'This is a localhost.',
       'features'     => array(
-        'mysql::yourdatabase'  => array('module' => 'adminer'),
-        'memcached::localhost' => array('module' => 'memcache', 'servers' => array('localhost:11211'),
-        ),
+        'mysql_yourdatabase' => array(
+          'module' => 'adminer',
+          'params' => array(
+            'server'   => 'localhost',
+            'username' => 'user',
+            'password' => 'password',
+            'db'       => 'yourdatabase',
+          ),
+          'description' => 'データベース'
+        )
       ),
     ),
 
-    'web-sample1' => array(
-        'description' => 'web-sample1',
-        'features'     => array(
-        ),
+    'hoge_server1'     => array(
+      'description' => '',
     ),
 
-  )
+    'hoge_server2'     => array(
+        'description' => '',
+    ),
+  ),
 );

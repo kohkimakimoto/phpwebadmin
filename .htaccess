@@ -6,4 +6,12 @@ DirectoryIndex index.php
   ## Uncomment the following line, if you are having trouble
   # RewriteBase /
 
+  #RewriteCond %{REQUEST_URI} ^/features/.*
+
+  # for Admienr
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^modules/adminer/(.+)\.php$  /modules/adminer/index.php?feature=$1 [QSA,L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^modules/adminer/(.+)\.css$  /modules/adminer/adminer.css [QSA,L]
+
 </IfModule>

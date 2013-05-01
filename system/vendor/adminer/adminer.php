@@ -21,7 +21,7 @@ function adminer_object() {
   return new AdminerCustomization($plugins);
   */
 
-  return new AdminerPlugin($plugins);
+  return new AdminerExtention($plugins);
 }
 // include original Adminer or Adminer Editor
 include __DIR__."/adminer-3.6.3.php";

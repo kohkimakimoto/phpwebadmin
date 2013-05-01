@@ -1,3 +1,8 @@
+<?php
+require __DIR__."/../../system/bootstrap.php";
+require AppConfig::get('system_dir')."/include/protect.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="<?php echo AppConfig::get('base_url')?>/statics/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo AppConfig::get('base_url')?>/statics/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo AppConfig::get('base_url')?>/statics/css/style.css" rel="stylesheet">
     <script src="<?php echo AppConfig::get('base_url')?>/statics/js/jquery-1.8.1.min.js"></script>
     <script src="<?php echo AppConfig::get('base_url')?>/statics/js/bootstrap.js"></script>
@@ -17,9 +22,11 @@
         <div class="container-fluid">
           <ul class="nav">
             <li class=""><a href="<?php echo AppConfig::get('base_url')?>/">Home</a></li>
+            <!--
             <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/adminer/index.php">adminer</a></li>
             <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/genghis/index.php">genghis</a></li>
             <li><a class="framelink" href="<?php echo AppConfig::get('base_url')?>/modules/memcache/index.php">memcached</a></li>
+             -->
           </ul>
           <ul class="nav pull-right">
             <li>
