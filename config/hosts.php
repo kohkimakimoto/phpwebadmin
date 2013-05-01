@@ -15,8 +15,16 @@ return array(
             'password' => 'password',
             'db'       => 'yourdatabase',
           ),
-          'description' => 'データベース'
-        )
+          'description' => 'MySQL Database'
+        ),
+
+        'memcached' => array(
+          'module' => 'memcached',
+          'params' => array(
+            'servers'   => array('localhost:11211'),
+          ),
+          'description' => 'Memcached'
+        ),
       ),
     ),
 

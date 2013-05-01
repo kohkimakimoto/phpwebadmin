@@ -14,4 +14,8 @@ DirectoryIndex index.php
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^modules/adminer/(.+)\.css$  /modules/adminer/adminer.css [QSA,L]
 
+  # for Memcached
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^modules/memcached/(.+)\.php$  /modules/memcached/index.php?feature=$1 [QSA,L]
+
 </IfModule>

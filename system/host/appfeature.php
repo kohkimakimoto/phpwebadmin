@@ -57,11 +57,21 @@ class AppFeature
   public function getUrl()
   {
     if ($this->getModule()->getName() == 'adminer') {
+
       $params = $this->getParams();
       $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
 
       return AppConfig::get('base_url').'/modules/adminer/'.$feature_path.'.php?server='.@$params['server'].'&username='.@$params['username'].'&db='.@$params['db'];
+
+    } elseif ($this->getModule()->getName() == 'memcached') {
+
+      $params = $this->getParams();
+      $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
+
+      return AppConfig::get('base_url').'/modules/memcached/'.$feature_path.'.php';
+
     } else {
+
       return '';
     }
 
