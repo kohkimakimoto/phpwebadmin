@@ -47,4 +47,37 @@ class AppFunctions {
   {
     return strtoupper($method) == self::getRequestMethod();
   }
+
+  public static function httpRequestForNode($method, $url, $params = array())
+  {
+    $headers = array(
+      "Content-Type: application/x-www-form-urlencoded",
+      "X-Node-Auth-Token: ".AppConfig::get('node_auth_token'),
+    );
+
+    return self::httpRequest($method, $url, $params, $headers);
+  }
+
+  public static function httpRequest($method, $url, $params = array(), $headers = array())
+  {
+    $data = http_build_query($params);
+    if (!$headers) {
+      $headers = array("Content-Type: application/x-www-form-urlencoded");
+    }
+
+    $options = array('http' => array(
+        'method' => $method,
+        'header'  => implode("\r\n", $headers),
+    ));
+
+    if($method == 'GET') {
+      $url = ($data != '') ? $url.'?'.$data:$url;
+    } else if($method == 'POST') {
+      $options['http']['content'] = $data;
+    }
+
+    $ret = file_get_contents($url, false, stream_context_create($options));
+
+    return $ret;
+  }
 }

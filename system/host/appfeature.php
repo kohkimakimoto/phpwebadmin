@@ -70,6 +70,20 @@ class AppFeature
 
       return AppConfig::get('base_url').'/modules/memcached/'.$feature_path.'.php';
 
+    } elseif ($this->getModule()->getName() == 'apc') {
+
+      $params = $this->getParams();
+      $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
+
+      return AppConfig::get('base_url').'/modules/apc/'.$feature_path.'.php';
+
+    } elseif ($this->getModule()->getName() == 'phpinfo') {
+
+        $params = $this->getParams();
+        $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
+
+        return AppConfig::get('base_url').'/modules/phpinfo/'.$feature_path.'.php';
+
     } else {
 
       return '';

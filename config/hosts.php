@@ -25,6 +25,22 @@ return array(
           ),
           'description' => 'Memcached'
         ),
+
+        'apc' => array(
+          'module' => 'apc',
+          'params' => array(
+              'node_url'   => 'http://phpwebadmin.localdomain:8080/nodes/apc/index.php',
+          ),
+          'description' => 'apc information'
+        ),
+
+        'php' => array(
+          'module' => 'phpinfo',
+          'params' => array(
+            'node_url'   => 'http://phpwebadmin.localdomain:8080/nodes/phpinfo/index.php',
+          ),
+          'description' => 'php information'
+        ),
       ),
     ),
 

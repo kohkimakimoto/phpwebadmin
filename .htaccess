@@ -18,4 +18,12 @@ DirectoryIndex index.php
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^modules/memcached/(.+)\.php$  /modules/memcached/index.php?feature=$1 [QSA,L]
 
+  # for apc
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^modules/apc/(.+)\.php$  /modules/apc/index.php?feature=$1 [QSA,L]
+
+  # for phpinfo
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^modules/phpinfo/(.+)\.php$  /modules/phpinfo/index.php?feature=$1 [QSA,L]
+
 </IfModule>
