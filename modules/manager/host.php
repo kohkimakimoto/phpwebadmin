@@ -6,6 +6,8 @@ require_once AppConfig::get('system_dir').'/vendor/markdown/markdown.php';
 
 $hosts = AppHost::getAll();
 $currentHost = AppHost::getInstanceByName($_GET['hostname']);
+$features = $currentHost->getFeatures();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,11 +28,12 @@ $currentHost = AppHost::getInstanceByName($_GET['hostname']);
         <?php include('./_side.php');?>
         <div class="main">
           <h1><?php echo $currentHost->getName()?></h1>
-          <hr/>
           <p>
             <?php echo $currentHost->getOption('description')?>
           </p>
+          <hr/>
           <h2>Managed features</h2>
+          <?php if ($features): ?>
           <table class="table table-hover">
           <thead>
             <tr>
@@ -40,7 +43,7 @@ $currentHost = AppHost::getInstanceByName($_GET['hostname']);
             </tr>
           </thead>
           <tbody>
-          <?php foreach ($currentHost->getFeatures() as $feature):?>
+          <?php foreach ($features as $feature):?>
             <tr>
               <td style="width: 1%;">
                 <a href="<?php echo $feature->getUrl()?>">
@@ -57,6 +60,7 @@ $currentHost = AppHost::getInstanceByName($_GET['hostname']);
           <?php endforeach;?>
           </tbody>
           </table>
+          <?php endif;?>
         </div>
       </div>
     </div>

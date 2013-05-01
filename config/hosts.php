@@ -52,11 +52,11 @@ return array(
     ),
 
     'hoge_server1'     => array(
-      'description' => '',
+      'description' => 'hoge_server1 server.',
     ),
 
     'hoge_server2'     => array(
-        'description' => '',
+      'description' => 'hoge_server2 server.',
     ),
   ),
 );
