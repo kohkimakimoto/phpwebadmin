@@ -26,10 +26,10 @@ $currentHost = AppHost::getInstanceByName($_GET['hostname']);
         <?php include('./_side.php');?>
         <div class="main">
           <h1><?php echo $currentHost->getName()?></h1>
-          <p>
-          <?php echo $currentHost->getOption('description')?>
-          </p>
           <hr/>
+          <p>
+            <?php echo $currentHost->getOption('description')?>
+          </p>
           <h2>Managed features</h2>
           <table class="table table-hover">
           <thead>
