@@ -84,6 +84,13 @@ class AppFeature
 
         return AppConfig::get('base_url').'/modules/phpinfo/'.$feature_path.'.php';
 
+    } elseif ($this->getModule()->getName() == 'genghis') {
+
+      $params = $this->getParams();
+      $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
+
+      return AppConfig::get('base_url').'/modules/genghis/'.$feature_path.'.php';
+
     } else {
 
       return '';

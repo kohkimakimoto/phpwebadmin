@@ -41,6 +41,13 @@ return array(
           ),
           'description' => 'php information'
         ),
+        'genghis' => array(
+            'module' => 'genghis',
+            'params' => array(
+
+            ),
+            'description' => 'genghis'
+        ),
       ),
     ),
 

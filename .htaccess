@@ -26,4 +26,7 @@ DirectoryIndex index.php
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^modules/phpinfo/(.+)\.php$  /modules/phpinfo/index.php?feature=$1 [QSA,L]
 
+  # for genghis
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^modules/genghis/(.+)\.php$  /modules/genghis/index.php?feature=$1 [QSA,L]
 </IfModule>
