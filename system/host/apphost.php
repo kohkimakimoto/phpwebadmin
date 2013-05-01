@@ -41,6 +41,10 @@ class AppHost
   {
     $features = array();
     $fs = AppConfig::get('hosts/'.$this->name.'/features');
+    if (!$fs) {
+      return $features;
+    }
+
     foreach ($fs as $name => $options) {
       $f = new AppFeature();
       $f->setName($name);
