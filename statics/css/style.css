@@ -118,9 +118,10 @@ text-transform: none;
 .nav-list > .active > a,
 .nav-list > .active > a:hover,
 .nav-list > .active > a:focus {
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  background-color: #bbbbbb;
+  color: #000000;
+  text-shadow: none;
+  background-color: #cccccc;
+  font-weight: bold;
 }
 
 
