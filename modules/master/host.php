@@ -28,7 +28,6 @@ $features = $currentHost->getFeatures();
         <tr>
           <th>Name</th>
           <th>Description</th>
-          <th>Module</th>
         </tr>
       </thead>
       <tbody>
@@ -41,9 +40,6 @@ $features = $currentHost->getFeatures();
           </td>
           <td>
             <?php echo $feature->getDescription()?>
-          </td>
-          <td>
-            <?php echo $feature->getModule()->getName()?>
           </td>
         </tr>
       <?php endforeach;?>

@@ -11,7 +11,7 @@ require AppConfig::get('system_dir')."/include/protect.php";
       <?php require AppConfig::get('modules_dir')."/master/_side.php";?>
     </div>
     <div class="main">
-
+      <h1>Dashboard</h1>
     </div>
   </div>
 </div>
