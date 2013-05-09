@@ -3,7 +3,7 @@ html {
  height: 100%;
 }
 body {
-  padding-top: 30px;
+  padding-top: 0px;
   font-size: 13px;
 }
 
@@ -20,10 +20,6 @@ border-radius: 3px;
 -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-body.default  {
- padding-top: 10px;
 }
 
 
@@ -121,7 +117,7 @@ text-transform: none;
   color: #000000;
   text-shadow: none;
   background-color: #cccccc;
-  font-weight: bold;
+
 }
 
 
@@ -178,4 +174,12 @@ h5 {
 
 h6 {
   font-size: 11.9px;
+}
+
+#globalnaviFrame {
+position: relative;
+z-index: 99999;
+width: 100%;
+border: none;
+height: 35px;
 }
