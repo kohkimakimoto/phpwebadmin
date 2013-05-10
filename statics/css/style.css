@@ -183,3 +183,8 @@ width: 100%;
 border: none;
 height: 35px;
 }
+
+.content-footer {
+  padding-top: 30px;
+  text-align: right;
+}
