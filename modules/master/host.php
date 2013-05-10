@@ -34,7 +34,7 @@ $features = $currentHost->getFeatures();
       <?php foreach ($features as $feature):?>
         <tr>
           <td style="width: 1%;">
-            <a href="<?php echo $feature->getUrl()?>">
+            <a target="_blank" href="<?php echo $feature->getUrl()?>">
               <?php echo $feature->getName()?>
             </a>
           </td>
