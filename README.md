@@ -11,6 +11,10 @@ This software integrates some wanderful PHP scripts. The following is a list of 
 
   * [memcache.php](http://livebookmark.net/journal/2008/05/21/memcachephp-stats-like-apcphp/) - PHP Script shows Memcached Information.
 
+  * phpinfo
+
+  * apc.php
+
 # Usage
 
   1. Put all files in web accessible directory.
