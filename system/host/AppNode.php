@@ -1,5 +1,5 @@
 <?php
-class AppHost
+class AppNode
 {
   protected $name;
 
@@ -7,24 +7,24 @@ class AppHost
 
   public static function getAll()
   {
-    $chosts = AppConfig::get('hosts');
-    $hosts = array();
-    foreach ($chosts as $name => $v) {
-      $hosts[] = self::getInstanceByName($name);
+    $cnodes = AppConfig::get('nodes');
+    $nodes = array();
+    foreach ($cnodes as $name => $v) {
+      $nodes[] = self::getInstanceByName($name);
     }
 
-    return $hosts;
+    return $nodes;
   }
 
   public static function getInstanceByName($name)
   {
-    $hostoptions = AppConfig::get("hosts/$name");
+    $nodeoptions = AppConfig::get("nodes/$name");
 
-    $host = new AppHost();
-    $host->setName($name);
-    $host->setOptions($hostoptions);
+    $node = new AppNode();
+    $node->setName($name);
+    $node->setOptions($nodeoptions);
 
-    return $host;
+    return $node;
   }
 
   public function setName($name)
@@ -40,7 +40,7 @@ class AppHost
   public function getFeatures()
   {
     $features = array();
-    $fs = AppConfig::get('hosts/'.$this->name.'/features');
+    $fs = AppConfig::get('nodes/'.$this->name.'/features');
     if (!$fs) {
       return $features;
     }
@@ -49,7 +49,7 @@ class AppHost
       $f = new AppFeature();
       $f->setName($name);
       $f->setOptions($options);
-      $f->setHost($this);
+      $f->setNode($this);
       $features[] = $f;
     }
 

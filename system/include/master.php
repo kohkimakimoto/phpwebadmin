@@ -1,4 +1,4 @@
 <?php
-if (!AppConfig::get('is_master')) {
+if (!AppConfig::get('config/is_master')) {
   die('-1');
 }

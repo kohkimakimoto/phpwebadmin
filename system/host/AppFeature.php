@@ -5,7 +5,7 @@ class AppFeature
 
   protected $options;
 
-  protected $host;
+  protected $node;
 
   public function setName($name)
   {
@@ -44,14 +44,14 @@ class AppFeature
     return $this->options['params'];
   }
 
-  public function setHost($host)
+  public function setNode($node)
   {
-    $this->host = $host;
+    $this->node = $node;
   }
 
-  public function getHost()
+  public function getNode()
   {
-    return $this->host;
+    return $this->node;
   }
 
   public function getUrl()
@@ -59,35 +59,35 @@ class AppFeature
     if ($this->getModule()->getName() == 'adminer') {
 
       $params = $this->getParams();
-      $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
+      $feature_path = $this->getNode()->getName().'/features/'.$this->getName();
 
       return AppConfig::get('base_url').'/modules/adminer/'.$feature_path.'.php?server='.@$params['server'].'&username='.@$params['username'].'&db='.@$params['db'];
 
     } elseif ($this->getModule()->getName() == 'memcached') {
 
       $params = $this->getParams();
-      $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
+      $feature_path = $this->getNode()->getName().'/features/'.$this->getName();
 
       return AppConfig::get('base_url').'/modules/memcached/'.$feature_path.'.php';
 
     } elseif ($this->getModule()->getName() == 'apc') {
 
       $params = $this->getParams();
-      $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
+      $feature_path = $this->getNode()->getName().'/features/'.$this->getName();
 
       return AppConfig::get('base_url').'/modules/apc/'.$feature_path.'.php';
 
     } elseif ($this->getModule()->getName() == 'phpinfo') {
 
         $params = $this->getParams();
-        $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
+        $feature_path = $this->getNode()->getName().'/features/'.$this->getName();
 
         return AppConfig::get('base_url').'/modules/phpinfo/'.$feature_path.'.php';
 
     } elseif ($this->getModule()->getName() == 'genghis') {
 
       $params = $this->getParams();
-      $feature_path = $this->getHost()->getName().'/features/'.$this->getName();
+      $feature_path = $this->getNode()->getName().'/features/'.$this->getName();
 
       return AppConfig::get('base_url').'/modules/genghis/'.$feature_path.'.php';
 
@@ -100,6 +100,6 @@ class AppFeature
 
   public function getKey()
   {
-    return "hosts/".$this->getHost()->getName()."/features/".$this->getName();
+    return "hosts/".$this->getNode()->getName()."/features/".$this->getName();
   }
 }

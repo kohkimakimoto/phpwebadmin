@@ -4,7 +4,7 @@ require AppConfig::get('system_dir')."/include/master.php";
 require AppConfig::get('system_dir')."/include/protect.php";
 
 
-$phpinfo_params = AppConfig::get('hosts/'.$_GET['feature'].'/params');
+$phpinfo_params = AppConfig::get('nodes/'.$_GET['feature'].'/params');
 
 $content = AppFunctions::httpRequestForNode('GET', $phpinfo_params['node_url']);
 echo $content;

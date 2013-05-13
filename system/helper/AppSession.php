@@ -3,7 +3,7 @@ class AppSession {
 
   public static function getNamespace()
   {
-    $ns = AppConfig::get('session_namespace');
+    $ns = AppConfig::get('config/session_namespace');
     if (empty($ns)) {
       $ns = 'phpwebadmin_session';
     }
@@ -36,9 +36,9 @@ class AppSession {
 
   public static function checkPassword($username, $password)
   {
-    $passwords = AppConfig::get('passwords');
+    $users = AppConfig::get('users');
 
-    $user_password = @$passwords[$username];
+    $user_password = @$users[$username];
 
     if ($user_password === sha1($password)) {
       return true;
@@ -54,7 +54,5 @@ session_start();
 if (!isset($_SESSION[AppSession::getNamespace()])) {
   $_SESSION[AppSession::getNamespace()] = array();
 }
-
-include AppFunctions::getConfigDir().'/passwords.php';
 
 

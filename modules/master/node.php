@@ -6,9 +6,9 @@ require AppConfig::get('system_dir')."/include/protect.php";
 <?php require AppConfig::get('modules_dir')."/master/_header.php";?>
 <?php require AppConfig::get('modules_dir')."/master/_globalnavi.php";?>
 <?php
-$hosts = AppHost::getAll();
-$currentHost = AppHost::getInstanceByName($_GET['hostname']);
-$features = $currentHost->getFeatures();
+$nodes = AppNode::getAll();
+$currentNode = AppNode::getInstanceByName($_GET['nodename']);
+$features = $currentNode->getFeatures();
 ?>
 <div class="content-front">
   <div class="container-front">
@@ -16,9 +16,9 @@ $features = $currentHost->getFeatures();
       <?php require AppConfig::get('modules_dir')."/master/_side.php";?>
     </div>
     <div class="main">
-      <h1><?php echo $currentHost->getName()?></h1>
+      <h1><?php echo $currentNode->getName()?></h1>
       <p>
-        <?php echo $currentHost->getOption('description')?>
+        <?php echo $currentNode->getOption('description')?>
       </p>
       <hr/>
       <h2>Managed features</h2>

@@ -1,0 +1,37 @@
+name: localhost2
+
+description: |
+  This is a localhost.
+
+features:
+  mysql_yourdatabase:
+    module: adminer
+    description: MySQL Database
+    params:
+      server:   localhost
+      username: user
+      password: password
+      db:       yourdatabase
+
+  memcached:
+    module: memcached
+    description: memcached
+    params:
+      servers: ['localhost:11211']
+
+  apc:
+    module:  apc
+    description:  apc information
+    params:
+      node_url:  http://phpwebadmin.localdomain:8080/nodes/apc/index.php
+
+  phpinfo:
+    module: phpinfo
+    description:  phpinfo
+    params:
+      node_url:  http://phpwebadmin.localdomain:8080/nodes/phpinfo/index.php
+
+  genghis:
+    module: genghis
+    description:  genghis
+    params:

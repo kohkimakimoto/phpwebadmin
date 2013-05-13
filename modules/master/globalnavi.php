@@ -31,7 +31,7 @@ require AppConfig::get('system_dir')."/include/protect.php";
         </ul>
         <ul class="nav pull-right">
           <li>
-            <a target="_top" href="<?php echo AppConfig::get('base_url')."/modules/manager/logout.php"?>">
+            <a target="_top" href="<?php echo AppConfig::get('base_url')."/modules/master/logout.php"?>">
             <i class="icon-off icon-white"></i>
             Logout
             </a>

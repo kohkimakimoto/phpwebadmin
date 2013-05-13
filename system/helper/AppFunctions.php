@@ -52,7 +52,7 @@ class AppFunctions {
   {
     $headers = array(
       "Content-Type: application/x-www-form-urlencoded",
-      "X-Node-Auth-Token: ".AppConfig::get('node_auth_token'),
+      "X-Node-Auth-Token: ".AppConfig::get('config/node_auth_token'),
     );
 
     return self::httpRequest($method, $url, $params, $headers);

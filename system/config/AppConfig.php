@@ -23,7 +23,7 @@ class AppConfig
       throw new Exception("Configuration file is not found.");
     }
 
-    $arr = include($path);
+    $arr = AppYaml::parseYaml($path);
     self::$config = array_merge(self::$config, $arr);
   }
 
