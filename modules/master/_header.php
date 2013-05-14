@@ -17,6 +17,7 @@ if (!defined('WA_ROOT')) {
     <script src="<?php echo AppConfig::get('base_url')?>/statics/js/bootstrap.js"></script>
     <script src="<?php echo AppConfig::get('base_url')?>/statics/js/jquery.imagesloaded.min.js"></script>
     <script src="<?php echo AppConfig::get('base_url')?>/statics/js/jquery.masonry.min.js"></script>
+    <script src="<?php echo AppConfig::get('base_url')?>/statics/js/app.js"></script>
   </head>
   <body>
 

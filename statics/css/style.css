@@ -206,6 +206,10 @@ height: 35px;
 .itemInner {
   padding: 10px;
 }
+
+.item {
+  cursor: pointer;
+}
 .item h4 {
   line-height: 1px;
   font-size: 17px;
