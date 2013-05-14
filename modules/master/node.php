@@ -20,7 +20,6 @@ $features = $currentNode->getFeatures();
       <p>
         <?php echo $currentNode->getOption('description')?>
       </p>
-      <hr/>
       <h2>Managed features</h2>
       <?php if ($features): ?>
       <table class="table table-hover">

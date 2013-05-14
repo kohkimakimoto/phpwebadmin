@@ -12,6 +12,8 @@ require AppConfig::get('system_dir')."/include/protect.php";
     </div>
     <div class="main">
       <h1>Dashboard</h1>
+
+      <h2>All managed features</h2>
       <?php
       $nodes = AppNode::getAll();
       ?>
