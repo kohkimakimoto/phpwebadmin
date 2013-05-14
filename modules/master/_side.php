@@ -11,7 +11,13 @@ $nodes = AppNode::getAll();
 <li class="<?php echo ('/index.php' == $_SERVER["SCRIPT_NAME"]) ? 'active' : '';?>"><a href="<?php echo AppConfig::get('config/base_url')?>/">Dashboard</a></li>
 <li class="nav-header">Managed nodes</li>
   <?php foreach ($nodes as $node):?>
-    <li class="<?php echo ($nodename == $node->getName()) ? 'active' : '';?>"><a href="<?php echo AppConfig::get('config/base_url')?>/modules/master/node.php?nodename=<?php echo $node->getName()?>"><?php echo $node->getName()?></a></li>
+    <li class="<?php echo ($nodename == $node->getName()) ? 'active' : '';?>">
+    <a href="<?php echo AppConfig::get('config/base_url')?>/modules/master/node.php?nodename=<?php echo $node->getName()?>">
+    <i class="icon-cog"></i>
+    <?php echo $node->getName()?>
+    </a>
+
+    </li>
   <?php endforeach;?>
 </ul>
 </div>
