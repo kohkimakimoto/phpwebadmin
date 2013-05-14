@@ -197,19 +197,27 @@ height: 35px;
 
 .item {
   background: #f1f1f1;
+  border: 1px solid #f1f1f1;
   width: 220px;
   margin-right: 10px;
   margin-bottom: 10px;
   float: left;
 }
 
+.item:hover {
+  border: 1px solid #aaaaaa;
+  cursor: pointer;
+  background: #f3f3f3;
+}
+.item a:hover {
+  text-decoration: none;
+}
+
 .itemInner {
   padding: 10px;
 }
 
-.item {
-  cursor: pointer;
-}
+
 .item h4 {
   line-height: 1px;
   font-size: 17px;
