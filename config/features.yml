@@ -1,9 +1,0 @@
-features:
-  mysql_yourdatabase:
-    module: adminer
-    description: MySQL Database
-    params:
-      server:   localhost
-      username: user
-      password: password
-      db:       yourdatabase
